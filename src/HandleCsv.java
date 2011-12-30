@@ -18,8 +18,8 @@ import org.kohsuke.args4j.spi.BooleanOptionHandler;
 
 public class HandleCsv {
 
-    @Option(name="-r",usage="recursively run something")
-    private boolean recursive;
+    @Option(name="-d",usage="create language files inside directories, e.g. en.xml ends up in en/en.xml")
+    private boolean doDirectories;
 
     @Option(name="-i", usage="Specify the encoding for the inputfile. The encoding should be a valid java encoding, eg UTF-8")        // no usage
     private String inputEncoding = "macintosh";
@@ -84,7 +84,12 @@ public class HandleCsv {
 
 			br.mark(60000);
 			for (int i = 1; i < languages.length; i++) {
-				FileWriter FileOutStream = new FileWriter(languages[i] + ".xml");
+				String filename = languages[i] + ".xml";
+				if (doDirectories) {
+					filename = languages[i] +"/" + languages[i] + ".xml";
+					
+				}
+				FileWriter FileOutStream = new FileWriter(filename);
 
 				System.out.println("Writing " + languages[i] + ".xml" + " "
 						+ FileOutStream.getEncoding());
