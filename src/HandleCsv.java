@@ -81,7 +81,7 @@ public class HandleCsv {
 			System.out.println("Reading " + InputFile + " " + inputEncoding);
 			String strLine = br.readLine();
 			String[] languages = strLine.split(";");
-			System.out.println(strLine);
+
 			br.mark(60000);
 			for (int i = 1; i < languages.length; i++) {
 				String filename = languages[i] + ".xml";
