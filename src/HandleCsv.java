@@ -77,11 +77,11 @@ public class HandleCsv {
 
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(
-					new FileInputStream(InputFile), "macintosh"));
+					new FileInputStream(InputFile), inputEncoding));
 			System.out.println("Reading " + InputFile + " " + inputEncoding);
 			String strLine = br.readLine();
 			String[] languages = strLine.split(";");
-
+			System.out.println(strLine);
 			br.mark(60000);
 			for (int i = 1; i < languages.length; i++) {
 				String filename = languages[i] + ".xml";
@@ -97,6 +97,7 @@ public class HandleCsv {
 				out.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
 				out.write("<resources>\n");
 				while ((strLine = br.readLine()) != null)
+
 					if (!strLine.equalsIgnoreCase("")) {
 						String[] values = strLine.split(";");
 
