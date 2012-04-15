@@ -98,15 +98,19 @@ public class HandleCsv {
 				out.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
 				out.write("<resources>\n");
 				while ((strLine = br.readLine()) != null)
-
+					//System.out.println(strLine);	
 					if (!strLine.equalsIgnoreCase("")) {
 						String[] values = strLine.split(";");
-
+						
 						String translation = "";
-
-						if (values.length == 1) {
+						
+						if (values.length == 0) {
+							continue;
+						}
+						else if (values.length == 1) {
 							translation = values[0];
 						} else if (values.length <= i) {
+							
 							translation = values[1];
 						} else {
 							translation = values[i];
