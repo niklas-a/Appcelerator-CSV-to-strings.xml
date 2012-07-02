@@ -13,4 +13,13 @@ Input, strings.csv:
 Output:
 
 en/en.xml
-sv/sv.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <string name="greeting_text">Hello!</string>
+</resources>
+
+sv/sv.xml:
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <string name="greeting_text">Tjena!</string>
+</resources>
