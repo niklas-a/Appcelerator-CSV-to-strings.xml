@@ -1,4 +1,4 @@
-CSV to strings.xml lets you easily manage multiple languages in apps powered by Appcelerator. 
+This application lets you easily manage multiple languages in apps powered by Appcelerator. 
 As input it takes a CSV file and as output it produces separate language files.
 
 The CSV file should be of the following format for an app translated into english and swedish:
